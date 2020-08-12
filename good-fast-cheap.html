@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good-fast-cheap</title>
+    <style>
+        input {
+            margin-top: 10px;
+            width: 30px;
+            height: 30px;
+            margin-left: 30px;
+        }
+        label{
+            margin-top: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: auto; width: 500px ">
+        <input type="checkbox" id="good" name="good" onclick="good()"><label> Good</label>
+        <input type="checkbox" id="cheap" name="cheap" onclick="cheap()"><label> Cheap</label>
+        <input type="checkbox" id="fast" name="fast" onclick="fast()"><label> Fast</label>
+        <script>
+           function good(){
+                if(document.getElementById('fast').checked === true){
+                    document.getElementById('cheap').checked = false;
+                }
+                else if(document.getElementById('cheap').checked === true){
+                    document.getElementById('fast').checked = false;
+                }
+           }
+           function cheap(){
+               if(document.getElementById('good').checked === true){
+                   document.getElementById('fast').checked = false;
+               }
+               else if(document.getElementById('fast').checked === true){
+                   document.getElementById('good').checked = false;
+               }
+           }
+           function fast(){
+               if(document.getElementById('good').checked === true){
+                   document.getElementById('cheap').checked = false;
+               }
+               else if(document.getElementById('cheap').checked === true){
+                   document.getElementById('good').checked = false;
+               }
+           }
+        </script>
+
+    </div>
+</body>
+</html>
